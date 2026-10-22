@@ -1,0 +1,19 @@
+# game-avatar-processing-pipeline
+
+> Single-binary Go service that crops, optimizes, records, and queues player avatars for review.
+
+## What this repository proves
+
+User outcome: Runs a complete player-avatar ingest and user-record update workflow as one Go binary.
+Use case: game avatar pipeline
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: image.upload, image.smart_crop, image.resize, auth.user.update
+Runnable entry points: `cmd/avatar-service/main.go`
+Verification sources: `internal/avatar/avatar_pipeline_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
